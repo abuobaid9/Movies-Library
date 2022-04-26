@@ -3,7 +3,7 @@
 **Author Name** :  Anas Abuobaid
 
 ## WRRC
-Add an image of your WRRC here
+![photo](wrrc.png)
 
 ## Overview
 
