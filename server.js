@@ -13,9 +13,15 @@ require('dotenv').config();
 const apiKey=process.env.API_KEY;
     app.listen(port, handleListen);
     app.get("/",handleHomepage);
+
+    app.get("/favorite",handleFavorite)
+    app.get("//",handleInternalError)
+    app.get("*",handleNotFound)
+
     app.get("/favorite",handleFavorite);
     app.get("/trending",handleTrending);
     app.get("/search",handleSearch);
+
 
 
 //function:
@@ -30,6 +36,7 @@ function handleListen(){
   res.send("Welcome to Favorite Page");
  }
  function handleTrending(req,res){
+
    const url =`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
      axios.get(url)
      .then(result =>{
@@ -50,7 +57,6 @@ function  handleSearch(req,res){
     // console.log(req.query);
     let movieName = req.query.movieName;
     const url =`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=2`;
-
     axios.get(url)
     .then(result => {
         // console.log(result.data.results);
@@ -72,4 +78,15 @@ this.release_date=release_date;
 this.poster_path=poster_path;
 this.overview=overview;
     }
+
+    function handleInternalError(req,res){
+        res.status(500).send(" 500 Internal Server Error ");
+    }
+
+    function handleNotFound(req, res){
+        res.status(404).send("Not Found");
+
+    }
+
    
+
