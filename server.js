@@ -13,9 +13,15 @@ require('dotenv').config();
 
     app.listen(port, handleListen);
     app.get("/",handleHomepage);
+
+    app.get("/favorite",handleFavorite)
+    app.get("//",handleInternalError)
+    app.get("*",handleNotFound)
+
     app.get("/favorite",handleFavorite);
     app.get("/trending",handleTrending);
     app.get("/search",handleSearch);
+
 
 
 //function:
@@ -72,4 +78,15 @@ this.release_date=release_date;
 this.poster_path=poster_path;
 this.overview=overview;
     }
+
+    function handleInternalError(req,res){
+        res.status(500).send(" 500 Internal Server Error ");
+    }
+
+    function handleNotFound(req, res){
+        res.status(404).send("Not Found");
+
+    }
+
    
+
