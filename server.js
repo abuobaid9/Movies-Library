@@ -36,7 +36,8 @@ function handleListen(){
   res.send("Welcome to Favorite Page");
  }
  function handleTrending(req,res){
-   const url ="https://api.themoviedb.org/3/trending/all/week?api_key=e38499df126365dd54735bc35087fa19&language=en-US";
+//   api_key=e38499df126365dd54735bc35087fa19
+   const url ="https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US";
      axios.get(url)
      .then(result =>{
         //  console.log(result.data.results);
@@ -55,8 +56,7 @@ function handleListen(){
 function  handleSearch(req,res){
     // console.log(req.query);
     let movieName = req.query.movieName;
-    const url =`https://api.themoviedb.org/3/search/movie?api_key=e38499df126365dd54735bc35087fa19&language=en-US&query=${movieName}&page=2`;
-   // let url = `https://api.spoonacular.com/recipes/complexSearch?query=${movieName}&apiKey=${apiKey}`
+    const url =`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=2`;
     axios.get(url)
     .then(result => {
         // console.log(result.data.results);
