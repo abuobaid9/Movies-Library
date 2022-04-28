@@ -5,12 +5,12 @@ const express = require('express');
 const movieData = require("./MovieData/data.json");
 const cors = require("cors");
 const axios =require('axios').default;
-const apiKey=process.env.API_KEY;
+
 const app = express();
 app.use(cors());
 const port = 3000
 require('dotenv').config();
-
+const apiKey=process.env.API_KEY;
     app.listen(port, handleListen);
     app.get("/",handleHomepage);
 
@@ -36,8 +36,8 @@ function handleListen(){
   res.send("Welcome to Favorite Page");
  }
  function handleTrending(req,res){
-//   api_key=e38499df126365dd54735bc35087fa19
-   const url ="https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US";
+
+   const url =`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
      axios.get(url)
      .then(result =>{
         //  console.log(result.data.results);
