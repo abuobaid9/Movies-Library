@@ -5,12 +5,12 @@ const express = require('express');
 const movieData = require("./MovieData/data.json");
 const cors = require("cors");
 const axios =require('axios').default;
-const apiKey=process.env.API_KEY;
+
 const app = express();
 app.use(cors());
 const port = 3000
 require('dotenv').config();
-
+const apiKey=process.env.API_KEY;
     app.listen(port, handleListen);
     app.get("/",handleHomepage);
     app.get("/favorite",handleFavorite);
@@ -30,7 +30,7 @@ function handleListen(){
   res.send("Welcome to Favorite Page");
  }
  function handleTrending(req,res){
-   const url ="https://api.themoviedb.org/3/trending/all/week?api_key=e38499df126365dd54735bc35087fa19&language=en-US";
+   const url =`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
      axios.get(url)
      .then(result =>{
         //  console.log(result.data.results);
@@ -49,8 +49,8 @@ function handleListen(){
 function  handleSearch(req,res){
     // console.log(req.query);
     let movieName = req.query.movieName;
-    const url =`https://api.themoviedb.org/3/search/movie?api_key=e38499df126365dd54735bc35087fa19&language=en-US&query=${movieName}&page=2`;
-   // let url = `https://api.spoonacular.com/recipes/complexSearch?query=${movieName}&apiKey=${apiKey}`
+    const url =`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=2`;
+
     axios.get(url)
     .then(result => {
         // console.log(result.data.results);
