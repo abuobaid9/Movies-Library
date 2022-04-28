@@ -17,6 +17,10 @@
 4. added the server code inside server.js
 5. run the server using node server.js
 
+## Tree Structure
+
+![tree](tree.png)
+
 ## Project Features
 <!-- What are the features included in you app -->
 *Add more movies
