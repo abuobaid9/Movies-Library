@@ -29,4 +29,5 @@
 * Connect With DB
 * Add Search Movie
 * Add Play list For You
+* Add Some Changes In The Style
 
