@@ -11,6 +11,7 @@
 ![photo2](wrrc2.png)
 
 ## WRRC With Data Base
+
 ![photo3](wrrc%203.png)
 
 ## Getting Started
@@ -28,6 +29,4 @@
 * Add more movies
 * Connect With DB
 * Add Search Movie
-* Add Play list For You
-* Add Some Changes In The Style
-
+* Add Play list For You 
