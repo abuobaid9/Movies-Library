@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
- const { handle } = require('express/lib/application');
+const { handle } = require('express/lib/application');
 const movieData = require("./MovieData/data.json");
 const cors = require("cors");
 const axios =require('axios').default;
@@ -43,30 +43,30 @@ function handleListen(){
 })
 
     function handleHomepage(req, res){
-       let newData =new MovieDetlies (movieData.title, movieData.poster_path,movieData.overview) ;
+            let newData =new MovieDetlies (movieData.title, movieData.poster_path,movieData.overview) ;
     res.json(newData);
     }
 
- function handleFavorite(req ,res){
-  res.send("Welcome to Favorite Page");
- }
- function handleTrending(req,res){
-   const url =`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
-     axios.get(url)
-     .then(result =>{
+function handleFavorite(req ,res){
+res.send("Welcome to Favorite Page");
+}
+function handleTrending(req,res){
+const url =`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
+axios.get(url)
+.then(result =>{
         //  console.log(result.data.results);
-           let movie = result.data.results.map(movieData => {
+let movie = result.data.results.map(movieData => {
             return new MovieDetlies(movieData.id,movieData.title, movieData.release_date, movieData.poster_path, movieData.overview);
         })
         res.json(movie);
         //  res.send("hi");
-     
-     })
-     .catch((error) => {
+
+})
+.catch((error) => {
         console.log(error);
         res.send("Inside catch")
     })
- }
+}
 function  handleSearch(req,res){
     // console.log(req.query);
     let movieName = req.query.movieName;
@@ -75,7 +75,7 @@ function  handleSearch(req,res){
     axios.get(url)
     .then(result => {
         // console.log(result.data.results);
-       res.json(result.data.results);
+res.json(result.data.results);
     })
     .catch((error) => {
         console.log(error);

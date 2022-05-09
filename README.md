@@ -10,6 +10,9 @@
 
 ![photo2](wrrc2.png)
 
+## WRRC With Data Base
+![photo3](wrrc%203.png)
+
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 ## Building a server using Express:
@@ -22,4 +25,8 @@
 
 ## Project Features
 <!-- What are the features included in you app -->
-*Add more movies
+* Add more movies
+* Connect With DB
+* Add Search Movie
+* Add Play list For You
+
