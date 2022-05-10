@@ -14,6 +14,10 @@
 
 ![photo3](wrrc%203.png)
 
+## WWRC For Updated
+
+![photo4](wrrc4.png)
+
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 ## Building a server using Express:
@@ -30,3 +34,5 @@
 * Connect With DB
 * Add Search Movie
 * Add Play list For You 
+* Add Updated Method
+* Add Deleted Method
