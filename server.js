@@ -39,6 +39,7 @@ const client = new Client(url);
     app.use(handleError);
 
 
+
 //function:
 
     function handleHomepage(req, res){
@@ -46,14 +47,16 @@ const client = new Client(url);
     res.json(newData);
     }
 
-function handleFavorite(req ,res){
-res.send("Welcome to Favorite Page");
-}
 
-function handleTrending(req,res){
-const url =`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
-axios.get(url)
-.then(result =>{
+ function handleFavorite(req ,res){
+  res.send("Welcome to Favorite Page");
+ }
+ function handleTrending(req,res){
+
+   const url =`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=en-US`;
+     axios.get(url)
+     .then(result =>{
+
         //  console.log(result.data.results);
 let movie = result.data.results.map(movieData => {
             return new MovieDetlies(movieData.id,movieData.title, movieData.release_date, movieData.poster_path, movieData.overview);
@@ -71,7 +74,6 @@ function  handleSearch(req,res){
     // console.log(req.query);
     let movieName = req.query.movieName;
     const url =`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${movieName}&page=2`;
-
     axios.get(url)
     .then(result => {
         // console.log(result.data.results);
@@ -175,3 +177,12 @@ this.release_date=release_date;
 this.poster_path=poster_path;
 this.overview=overview;
     }
+
+//     function handleInternalError(req,res){
+//         res.status(500).send(" 500 Internal Server Error ");
+//     }
+
+//     function handleNotFound(req, res){
+//         res.status(404).send("Not Found");
+
+//     }
