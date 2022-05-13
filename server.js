@@ -144,10 +144,9 @@ function handleDelete(req, res) {
 }
 function handleGetMovie(req,res){
     const { movieName } = req.params;
-    const { id, title,release_date,poster_path, overview } = req.body;
-    let sql = 'SELECT * from movie ;';
-    // WHERE values = ($1,$2,$3,$4,$5,$6)
-    // let values = [id, title,release_date,poster_path, overview, movieName];
+    const { id } = req.body;
+    let sql = 'SELECT * from movie WHERE id=$1;';
+    let value =[id];
     client.query(sql).then((result) => {
         console.log(result);
         res.json(result.rows);
