@@ -4,19 +4,19 @@
 
 ## WRRC With Out API
 
-![photo](wrrc.png)
+![photo](./img/wrrc.png)
 
 ## WRRC With API
 
-![photo2](wrrc2.png)
+![photo2](./img/wrrc2.png)
 
 ## WRRC With Data Base
 
-![photo3](wrrc%203.png)
+![photo3](./img/wrrc%203.png)
 
 ## WWRC For Updated
 
-![photo4](wrrc4.png)
+![photo4](./img/wrrc4.png)
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -30,7 +30,7 @@
 
 ## Tree Structure
 
-![tree](tree.png)
+![tree](./img/tree.png)
 
 ## Project Features
 <!-- What are the features included in you app -->
