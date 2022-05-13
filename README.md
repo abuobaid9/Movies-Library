@@ -4,17 +4,19 @@
 
 ## WRRC With Out API
 
-![photo](wrrc.png)
+![photo](./img/wrrc.png)
 
 ## WRRC With API
 
-![photo2](wrrc2.png)
+![photo2](./img/wrrc2.png)
 
 ## WRRC With Data Base
 
-![photo3](wrrc%203.png)
+![photo3](./img/wrrc%203.png)
 
-## Getting Started 
+
+
+## Getting Started
 
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 ## Building a server using Express:
@@ -25,9 +27,6 @@
 4. added the server code inside server.js
 5. run the server using node server.js
 
-## Tree Structure
-
-![tree](tree.png)
 
 ## Project Features
 <!-- What are the features included in you app -->
@@ -35,3 +34,4 @@
 * Connect With DB
 * Add Search Movie
 * Add Play list For You 
+
