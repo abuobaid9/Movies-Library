@@ -14,11 +14,14 @@
 
 ![photo3](./img/wrrc%203.png)
 
-## WWRC For Updated
+
 
 ![photo4](./img/wrrc4.png)
+=======
+
 
 ## Getting Started
+
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 ## Building a server using Express:
 
@@ -28,9 +31,11 @@
 4. added the server code inside server.js
 5. run the server using node server.js
 
+
 ## Tree Structure
 
 ![tree](./img/tree.png)
+
 
 ## Project Features
 <!-- What are the features included in you app -->
@@ -38,5 +43,4 @@
 * Connect With DB
 * Add Search Movie
 * Add Play list For You 
-* Add Updated Method
-* Add Deleted Method
+
