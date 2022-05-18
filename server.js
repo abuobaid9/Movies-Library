@@ -88,13 +88,14 @@ function handleAdd(req,res){
     // console.log(req.body);
     // res.send("hello from server");
 
-    const { id, title, release_date, poster_path,overview } = req.body;
+    const { id, title, release_date, poster_path,overview ,commnet } = req.body;
 
-    let sql = 'INSERT INTO movie(id,title,release_date,poster_path,overview ) VALUES($1, $2, $3, $4,$5) RETURNING *;' // sql query
-    let values = [id, title, release_date, poster_path,overview];
+    let sql = 'INSERT INTO movie(id,title,release_date,poster_path,overview,commnet ) VALUES($1, $2, $3, $4,$5,$6) RETURNING *;' // sql query
+    let values = [id, title, release_date, poster_path,overview,commnet];
     client.query(sql, values).then((result) => {
         console.log(result.rows);
         return res.status(201).json(result.rows);
+        res.send("Add ");
     }).catch()
 }
 function handleGet(req,res){
@@ -142,18 +143,31 @@ function handleDelete(req, res) {
         console.log("error in delete section", error);
     })
 }
+// function handleGetMovie(req,res){
+//     const { movieName } = req.params;
+//     const { id } = req.body;
+//     let sql = 'SELECT * from movie WHERE id=$1;';
+//     let value =[id];
+//     client.query(sql).then((result) => {
+//         console.log(result);
+//         res.json(result.rows);
+//     }).catch((err) => {
+//         handleError(err, req, res);
+//     });
+// }
 function handleGetMovie(req,res){
-    const { movieName } = req.params;
-    const { id } = req.body;
-    let sql = 'SELECT * from movie WHERE id=$1;';
+    const{id} = req.params
+
+    const sql = 'SELECT * from movie WHERE id=$1;';
     let value =[id];
-    client.query(sql).then((result) => {
-        console.log(result);
-        res.json(result.rows);
-    }).catch((err) => {
-        handleError(err, req, res);
+
+    client.query(sql ,value).then(data => {
+        return res.status(200).json(data.rows);
+    })
+    .catch(error => {
+        handleError(error, req,res);
     });
-}
+};
 
 function handleError(error, req, res) {
     res.status(500).send(error);
